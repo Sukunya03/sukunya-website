@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <title>website Sukunya Sriring</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" cossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #d3e6f8;
+            font-family: Glacial indifference, sans-serif;
+        }
+        h1 {
+            color: #05164d;
+            text-align: center;
+        }
+        p {
+            font-size: 16px;
+            text-align: center;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            border: 10px solid #a8b5bc;
+            border-radius: 50%; /*ทำให้เป็นวงกลม*/
+            box-shadow: 0 4px 8px rgba(0,0,0,0); /*เพิ่มเงาให้รูปภาพ*/
+            display: block; /*จัดรูปภาพให้อยู่คนละบรรทัดกับข้อความ*/
+            margin: 20px auto; /*จัดให้อยู่กึ่งกลางหน้าเว็บ*/
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse; /*รวมเส้นขอบของเซลล์ให้เป็นเส้นเดียว*/
+            margin: 20px auto;
+            background-color: #bff3f5;
+        }
+        th,td {
+            border: 1px solid#555555; /*เพิ่มเส้นขอบของเซลล์*/
+            padding: 12px; /*เพิ่มระยะห่างภายในเซลล์*/
+        }
+        th {
+            background-color: #2498db;
+            color: white; /*สีตัวอักษรบนหัวตาราง*/
+        }
+        tr:nth-child(even) {
+            background-color: #a7d1d3; /*สลับพื้นหลังของแถวเพื่อให้อ่านง่ายขึ้น*/
+
+        }
+    </style>
+</head>
+<body>
+    <h1>My first page</h1>
+    <img src="moodeng.jpg" alt="My picture" width="200">
+    <p>Hello This is my website introduce</p>
+    <table border="1">
+        <thread>
+            <tr>
+                <th colspan ="2"> Personal Data</th>
+            </tr>
+        </thread>
+        <tbody>
+            <tr>
+                <td>Studen ID</td>
+                <td>683380100-1</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Sukunya Sriring</td>
+            </tr>
+            <tr>
+                <td>E-Mail</td>
+                <td>sukunya.s@kkumail.com</td>
+            </tr>
+            <tr>
+                <td>Interest</td>
+                <td>wacth movie</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="rbox">
+        <button onclick="start_random()">Click for random number 3  digit</button>
+        <div id="num">---</div>
+    </div>
+    <script>
+        let n=0;
+        let numElem = document.getElementById("num");
+        function start_random(){
+            if(n>0) return;
+            n=50;
+            next_number();
+        }
+        function next_number(){
+            var r=Math.round(Math.random()*999)+"";
+            numElem.innerText=r.padStart(6,'0');
+            n--;
+            if(n>0){
+                setTimeout(next_number,150-n);
+            }
+        }
+    </script>
+
+</body>
+</html>
